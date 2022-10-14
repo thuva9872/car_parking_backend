@@ -25,6 +25,11 @@ import java.util.logging.Logger;
 public class SMS {
     private final static Logger LOGGER = Logger.getLogger(SMS.class.getName());
 
+    @GetMapping("/")
+    public ResponseEntity<?> home(){
+        return ResponseEntity.ok(new MessageResponse("Parking Home"));
+    }
+
     @GetMapping("/send")
     public ResponseEntity<?> sendSmsEp() {
         try {
@@ -36,8 +41,8 @@ public class SMS {
 //            mtSmsReq = createSubmitMultipleSms(moSmsReq);
             mtSmsReq = createSimpleMtSms();
 
-            mtSmsReq.setApplicationId("APP_999999");
-            mtSmsReq.setPassword("password");
+            mtSmsReq.setApplicationId("APP_063722 ");
+            mtSmsReq.setPassword("f37cfdeb8b6e8edb2aa62aa15207c89c");
             mtSmsReq.setSourceAddress("parking.lk");// default sender address or aliases
             mtSmsReq.setVersion("1.0");
 //            mtSmsReq.setEncoding("0");
